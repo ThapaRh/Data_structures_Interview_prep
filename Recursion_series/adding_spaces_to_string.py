@@ -1,6 +1,6 @@
+
 #This is easy question, trick is if we use string concatenation it gives Time limit exceeded error becasue they say + takes a lot of time 
-
-
+#TC and SC O(s)
 class Solution(object):
     def addSpaces(self, s, spaces):
         # new_word = ""
