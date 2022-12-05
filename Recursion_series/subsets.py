@@ -41,3 +41,7 @@ def subset_non_recur(nums):
 print(subset_non_recur([1,2,3]))
 
 
+
+#Tc = O(n*(2^n))
+#SC is the same
+
