@@ -34,15 +34,15 @@ print(unboundedKnapsack([1,2,3,4,5],[1,5,8,9,10]))
 # def diffApproach(length,price):
 #     sum = len(length)+1
 #     len_price = len(length)+1
-#     array=[[0]*sum]*len_price
+#     array=[[0 for i in range(sum)]for j in range(sum)]
 
-#     for i in range(1,sum):
-#         for j in range(1,len_price):
+#     for i in range(1,len_price+1): 
+#         for j in range(1,sum+1):
 #             if length[i-1]<=j:
-#                 array[i][j]=max(price[i-1]+array[i][j-length[i-1]], array([i-1][j]) )
+#                 array[i][j]=max((price[i-1]+array[i][j-length[i-1]]), array([i-1][j]) )
 #             else:
 #                 array[i][j]=array([i-1][j])
-#     return array[i][j]
+#     return array[sum-1][len_price-1]
 
 # print(diffApproach([1,2,3,4,5],[1,5,8,9,10]))
 
