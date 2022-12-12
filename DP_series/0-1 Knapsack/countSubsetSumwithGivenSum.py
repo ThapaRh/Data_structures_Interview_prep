@@ -28,4 +28,4 @@ def countSubsetSum(arr,target):
     
     return count(arr,target,len(arr))
 
-print(countSubsetSum([1,2,1,3,1,3],3))
+print(countSubsetSum([1,2,3],4))
