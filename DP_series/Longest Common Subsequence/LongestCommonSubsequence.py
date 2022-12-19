@@ -42,3 +42,27 @@ class Solution(object):
                 dict[(len1,len2)] = max(recur(text1,text2,len1,len2-1), recur(text1,text2,len1-1,len2))
                 return dict[(len1,len2)]
         return recur(text1,text2,len1,len2)
+
+
+
+        #this is top down approach without using recursion:
+    def longestCommonSubsequence(self, text1, text2):
+        """
+        :type text1: str
+        :type text2: str
+        :rtype: int
+        """
+        len1=len(text1)
+        len2=len(text2)
+        t = [[0 for _ in range(len1+1)]for _ in range(len2+1)]
+        for i in range(len2+1):
+            for j in range(len1+1):
+                if i==0 or j==0:
+                    t[i][j]=0
+        for i in range(1,len2+1):
+            for j in range(1,len1+1):
+                if text1[j-1]==text2[i-1]:
+                    t[i][j]=1+t[i-1][j-1]
+                else:
+                    t[i][j]=max(t[i][j-1],t[i-1][j])
+        return t[len2][len1]
