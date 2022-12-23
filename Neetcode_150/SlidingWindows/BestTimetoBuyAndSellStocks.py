@@ -25,7 +25,9 @@ Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-
 Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 """
 #BruteForec TC: O(n^2)
-#@nd approach TC: O(N)
+#2nd approach TC: O(N)
+#Here we have to find a solution that has minimum buy  price and maximum sell price. 
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         # max_profit=0
