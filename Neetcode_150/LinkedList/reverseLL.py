@@ -10,7 +10,9 @@ Input: head = [1,2,3,4,5]
 Output: [5,4,3,2,1]
 """
 
-#Tc=O(N) SC=O(N) for recursive
+#Tc=O(N) SC=O(N) for recursive The extra space comes from implicit stack space due to recursion. The recursion could go up to nnn levels deep.
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
