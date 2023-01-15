@@ -14,7 +14,8 @@ Explanation: "aba" is also a valid answer.
 Example 2:
 
 Input: s = "cbbd"
-Output: "bb""""
+Output: "bb"
+"""
 #Tc = O(n^2) SC = O(1)
 class Solution:
     def longestPalindrome(self, s: str) -> str:
