@@ -1,13 +1,5 @@
 """131. Palindrome Partitioning
-Medium
-9K
-287
-company
-Bloomberg
-company
-Amazon
-company
-Adobe
+
 Given a string s, partition s such that every 
 substring
  of the partition is a 
@@ -25,6 +17,7 @@ Example 2:
 Input: s = "a"
 Output: [["a"]]
 """
+#TC=(n*2^n)) each character has two path, generate new substring or add to itself   SC=O(n)
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         res=[]

@@ -15,7 +15,7 @@ Explanation: 11 = 5 + 5 + 1
 """
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!100% Correct
-# it didnot work before when I passed minimum number of coins as a parameter, but if I don't pass it as parameter and sum it within minimum calculation like whoen in line 32, then there is no error.
+# it didnot work before when I passed minimum number of coins as a parameter, but if I don't pass it as parameter and sum it within minimum calculation like when in line 32, then there is no error.
 class Solution(object):
     def coinChange(self, coins, amount):
         dict={}
