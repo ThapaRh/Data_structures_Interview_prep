@@ -30,7 +30,7 @@ class Solution(object):
 
 
 
-# this is different approach with TC: O(n) and SC: O(1) by sorting
+# this is different approach with TC: O(nlog(n)) and SC: O(1) by sorting
 class Solution(object):
     def containsDuplicate(self, nums):
         """
