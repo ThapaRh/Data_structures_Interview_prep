@@ -11,7 +11,7 @@ Output: [1,2]
 
 # TC: O(N logk) SC: O(N+k)
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums,k):
         dict={}
         array = []
         for i in nums:
@@ -20,6 +20,12 @@ class Solution:
             else:
                 dict[i]=1
         new_dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)
+        dicts = sorted(dict.items()) #sorts by keys
+        dictss = sorted(dict.items(), key=lambda x:x[1]) #sorts by values
+        print(dict)
+        print(dicts)
+        print(dictss)
+        print(new_dict)
         i=0
         for m,n in new_dict:
             if i>=k:
@@ -28,5 +34,7 @@ class Solution:
                 array.append(m)
                 i+=1
         return array
+new = Solution()
+print(new.topKFrequent([1,2,3,1,1,2,3,3,4,4,4],3))
         
 
