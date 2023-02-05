@@ -63,4 +63,17 @@ class Solution:
             first=temp1
             second=temp2
 
-        
+        #or easier way
+        curr=head
+        counter=0
+        lst = ListNode(-1)
+        while(curr and prev):
+            if counter%2==0:
+                lst.next=curr
+                curr=curr.next
+            else:
+                lst.next=prev
+                prev=prev.next
+            counter+=1
+            lst=lst.next
+        return lst
