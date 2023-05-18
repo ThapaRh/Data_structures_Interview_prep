@@ -54,3 +54,25 @@ class Solution:
                     return False
                 box_check[box_num].add(board[i][j])
         return True
+
+        #this is not efficient since we are using array and it increases complexity when searching for elements so we are using dictionary now: And for sudoku board stuff we are storing the tuple in dictionary as the key
+    class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        r = len(board)
+        c = len(board[0])
+        rows = collections.defaultdict(set) 
+        cols = collections.defaultdict(set) 
+        sudo = collections.defaultdict(set) 
+
+        for i in range(r):
+            for j in range(c):
+                if board[i][j]==".":
+                    continue
+                if board[i][j] in rows[i] or board[i][j] in cols[j] or board[i][j] in sudo[(i//3,j//3)]:
+                    return False
+                else:
+                    cols[j].add(board[i][j])
+                    rows[i].add(board[i][j])
+                    sudo[(i//3,j//3)].add(board[i][j])
+        return True
+    
