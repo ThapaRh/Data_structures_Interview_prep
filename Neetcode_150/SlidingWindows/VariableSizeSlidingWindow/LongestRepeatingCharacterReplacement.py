@@ -11,6 +11,18 @@ Input: s = "ABAB", k = 2
 Output: 4
 Explanation: Replace the two 'A's with two 'B's or vice versa.
 """
+
+'''
+Solution Approach: 
+my thought process: 
+1. put the letters in dictionary with count 
+2. now use max_freq to store the count of charatcter that is most occuring
+3. make sure to use two pointers, start pointer that stays in the front only moves when the window size is large and second pointer for iterating over string. Say, j,i
+4. now we will check to see if i-j+1-max_freq is less than k
+5. if it is then we move the window by 1, like j+=1 and delete count from dict : dict[s[j]]-=1 
+6. if not then we calculate the length of that substring i-j+1 and we will store it in global variable max_length like: max_length = max(max_length, i-j+1)
+
+'''
 #TC=O(n) SC=O(m) mmm unique characters
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
