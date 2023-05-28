@@ -28,3 +28,21 @@ class Solution:
                     final[i]=(stack[-1][1]-i)
             stack.append([temperatures[i],i])
         return final  
+    
+    #cleaner solution
+    class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        i = len(temperatures)-1
+        stack = []
+        final = [-1] *len(temperatures)
+        while(i>=0):
+            while stack and stack[-1][0]<=temperatures[i]:
+                stack.pop()
+            if len(stack)==0:
+                final[i]=0
+            else:
+                val = stack[-1][1]-i
+                final[i]=val            
+            stack.append([temperatures[i],i])
+            i-=1
+        return final

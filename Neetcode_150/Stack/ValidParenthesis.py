@@ -10,36 +10,17 @@ Every close bracket has a corresponding open bracket of the same type.
 #Tc=O(N) SC=O(N)
 class Solution:
     def isValid(self, s: str) -> bool:
-        if len(s)==1:
-            return False
-        stack=[]
-        for b in s:
-            if b=="(" or b=="[" or b=="{":
-                stack.append(b)
-            else:
-                if len(stack)==0:
+        dict_b = {")":"(","]":"[","}":"{"}
+        b_stack = []
+        for brackets in s:
+            if brackets in dict_b:
+                if len(b_stack) == 0:
                     return False
                 else:
-                    val=stack.pop()
-                    if (b==")" and val!="(") or (b=="]" and val!="[") or  (b=="}" and val!="{"):
+                    if b_stack.pop()!=dict_b[brackets]:
                         return False
-        if len(stack)==0:
+            else:
+                b_stack.append(brackets)
+        if len(b_stack)==0:
             return True
         return False
-
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        dict = {"}":"{", "]":"[",")":"("}
-        for paren in s:
-            if paren=="{" or paren == "(" or paren == "[":
-                stack.append(paren)
-            else:
-                if len(stack)==0:
-                    return False
-                elif dict[paren]!=stack.pop():
-                        return False
-        if len(stack)==0:
-            return True
-        else:
-            return False
