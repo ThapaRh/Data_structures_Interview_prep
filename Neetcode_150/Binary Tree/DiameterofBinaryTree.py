@@ -22,7 +22,9 @@ Explanation: 3 is the length of the path [4,2,1,3] or [5,2,1,3].
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
-#         self.right = right
+#         self.right = right\
+
+#This is confusing bullshit
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         self.max_diameter=0
@@ -36,4 +38,19 @@ class Solution:
             total_height= 1+ max(left_height,right_height)
             return total_height
         maxLength(root)
+        return self.max_diameter
+
+
+#This is the way
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+
+        self.max_diameter = 0
+        def maxD(root):
+            if root==None:
+                return 0
+            left = 1+maxD(root.left)#calculating left height and right Height
+            right = 1+maxD(root.right)
+            self.max_diameter = max(left+right-2,self.max_diameter)#calculating max-diameter, we need to subtract 2 because every time we add left and right we add the root twice
+            return max(left,right)
+        maxD(root)
         return self.max_diameter
