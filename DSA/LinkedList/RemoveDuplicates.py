@@ -31,5 +31,5 @@ class Solution:
                 head.next = head.next.next
             else:
                 original.add(head.next.data)
-                head = head.next
+                head = head.next #only change head when head.next.val is not in original
         return curr
