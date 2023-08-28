@@ -14,5 +14,4 @@ class Solution:
                 final[hash_map[val]]=nums2[j]
             if nums2[j] in hash_map:
                 stack.append(nums2[j])
-            
         return final
